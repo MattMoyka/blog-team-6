@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getPosts } from '../../services/posts'
+import { Link } from "react-router-dom"
 import "./Home.css"
 
 export default function Home() {
@@ -24,7 +25,9 @@ export default function Home() {
             <img src={post.imgURL} alt={post?.name} />
             </div>
             <h3>Name: {post?.name} </h3>
-            <h4>Statuts {post?.status} </h4>
+            <h4>Statuts {post?.status}</h4>
+            <Link to="/editpost/:id">Edit Post</Link>
+            <button>Delete Post</button>
           </div>
         )
       })}
