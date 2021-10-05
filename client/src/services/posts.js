@@ -8,6 +8,7 @@ export const getPosts = async () => {
     throw error
   }
 }
+
 // export const getPost = async id => {
 //   try {
 //     const response = await api.get(`/posts/${id}`)
