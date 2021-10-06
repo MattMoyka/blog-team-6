@@ -35,7 +35,7 @@ border-radius: 10px;
   display: flex;
   flex-flow: row wrap;
   gap: 3vw;
-  margin: 20px;
+  margin: 40px 20px 20px 20px;
 }
 
 .buttons{

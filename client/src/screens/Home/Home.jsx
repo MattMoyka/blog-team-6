@@ -40,7 +40,7 @@ export default function Home() {
               </div>
               <div className='buttons'>
                 <Link className='editButton' to={`/editpost/${post._id}`}><i class="far fa-edit fa-2x"></i></Link>
-                <button className='deleteButton' id={post._id} onClick={handleEvent}><i class="far fa-trash-alt fa-2x"></i></button>
+                <i className='deleteButton' id={post._id} onClick={handleEvent} class="far fa-trash-alt fa-2x"></i>
               </div>
             </div>
           </div>
