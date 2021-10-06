@@ -1,9 +1,9 @@
 
 import './App.css';
 import Nav from './components/Nav'
-import Home from './screens/Home'
-import EditPost from './screens/EditPost'
-import CreatePost from './screens/CreatePost';
+import Home from './screens/Home/Home'
+import EditPost from './screens/EditPost/EditPost'
+import CreatePost from './screens/CreatePost/CreatePost';
 import { Route } from 'react-router-dom'
 
 

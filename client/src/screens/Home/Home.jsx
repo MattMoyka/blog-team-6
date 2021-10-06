@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
-import { getPosts } from '../services/posts'
+import { getPosts } from '../../services/posts'
+import { Link } from "react-router-dom"
+import "./Home.css"
 
 export default function Home() {
+
   const [posts, setPosts] = useState([])
+
   useEffect(() => {
     const fetchPosts = async() => {
       const allPosts = await getPosts()
@@ -11,7 +15,6 @@ export default function Home() {
     }
     fetchPosts()
   }, []);
-  console.log(posts)
 
   return (
     <div>
@@ -19,10 +22,12 @@ export default function Home() {
         return (
           <div className="Indi-Post">
             <div className="post-img">
-            <img src={post?.imgURL} alt={post?.name} />
+            <img src={post.imgURL} alt={post?.name} />
             </div>
             <h3>Name: {post?.name} </h3>
-            <h4>Statuts {post?.status} </h4>
+            <h4>Statuts {post?.status}</h4>
+            <Link to="/editpost/:id">Edit Post</Link>
+            <button>Delete Post</button>
           </div>
         )
       })}
