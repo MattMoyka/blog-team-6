@@ -1,12 +1,53 @@
-/* .Indi-Post {
+.Indi-Post {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 3%;
+    gap: 2vw;
+    box-shadow:  0px 0px 5px rgb(171, 171, 171);
+    width: 30vw;
+    border-radius: 10px;
+    padding: 0;
 }
 
 .post-img {
-    height: 50px;
-    width: 50px;
-} */
+margin: 0;
+border-radius: 10px;
+}
+
+.img{
+  border-radius: 10px 0 0px 10px;
+  object-fit: cover;
+}
+
+.words{
+  font-weight: 100;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  padding: 30px 0;
+  width: 60%;
+}
+
+.page{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 3vw;
+  margin: 20px;
+}
+
+.buttons{
+  display: flex;
+  gap: 10px;
+  justify-content: right;
+  padding-right: 10px;
+
+}
+
+.editButton, .deleteButton{
+background: transparent;
+border: none;
+color: black;
+}
