@@ -7,31 +7,16 @@ export const getPosts = async () => {
   } catch (error) {
     throw error;
   }
-<<<<<<< HEAD
 };
-// export const getPost = async id => {
-//   try {
-//     const response = await api.get(`/posts/${id}`)
-//     return response.data
-//   } catch (error) {
-//     throw error
-//   }
-// }
-export const createPost = async (post) => {
-=======
-}
-
-export const getPost = async id => {
+export const getPost = async (id) => {
   try {
-    const response = await api.get(`/posts/${id}`)
-    return response.data
+    const response = await api.get(`/posts/${id}`);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
-
-export const createPost = async post => {
->>>>>>> bae19566d8db5216115500cd9c301d617cdc9888
+};
+export const createPost = async (post) => {
   try {
     const response = await api.post("/posts", post);
     return response.data;
