@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from 'react-router-dom'
+import { useParams , Redirect} from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
 
 export default function EditPost() {
@@ -10,6 +10,7 @@ export default function EditPost() {
     imgURL: "",
   })
 
+  const [isUpdated, setUpdated] = useState(false)
   let { id } = useParams()
 
   useEffect(() => {
@@ -20,9 +21,49 @@ export default function EditPost() {
     fetchPost()
   }, [id])
 
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setPost({
+      ...post,
+      [name]: value,
+    })
+  }
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const updated = await updatePost(id, post)
+    setUpdated(updated)
+  }
+
+  if (isUpdated) {
+    return <Redirect to={`/`} />
+  }
+
   return (
-    <div>
-      Edit Page
-    </div>
+    <form onSubmit={handleSubmit}>
+    <input
+      className="input-name"
+      placeholder='Name'
+      value={post.name}
+      name='name'
+      autoFocus
+      onChange={handleChange}
+    />
+    <textarea
+      className="input-status"
+      placeholder='Status'
+      value={post.status}
+      name='status'
+      onChange={handleChange}
+    />
+    <input
+      className="input-image"
+      placeholder='Image URL'
+      value={post.imgURL}
+      name='imgURL'
+      autoFocus
+      onChange={handleChange}
+    />
+ <button type='submit' className="edit-button">Edit</button>
+  </form>
   )
 }
