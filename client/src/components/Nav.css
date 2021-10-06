@@ -1,8 +1,8 @@
 .nav {
   background-color: white;
   font-family: cursive, "Brush Script MT", "Lucida Handwriting";
-  position: fixed;
-  z-index: auto;
+  /* position: fixed; */
+  /* z-index: auto; */
   width: 100%;
   height: auto;
   box-shadow: 0 1px grey;
