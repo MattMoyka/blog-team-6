@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import { getPosts } from '../../services/posts'
+import { getPosts, deletePost} from '../../services/posts'
 import { Link } from "react-router-dom"
 import "./Home.css"
 
 export default function Home() {
 
   const [posts, setPosts] = useState([])
+  const [toggle, setToggle] = useState(false)
+
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -14,7 +16,14 @@ export default function Home() {
       console.log(allPosts)
     }
     fetchPosts()
-  }, []);
+  }, [toggle]);
+
+  function handleEvent(e) {
+    e.preventDefault()
+    console.log(e.target.id)
+    deletePost(e.target.id)
+    setToggle((prevToggle)=>!prevToggle)
+  }
 
   return (
     <div>
@@ -26,8 +35,8 @@ export default function Home() {
             </div>
             <h3>Name: {post?.name} </h3>
             <h4>Statuts {post?.status}</h4>
-            <Link to="/editpost/:id">Edit Post</Link>
-            <button>Delete Post</button>
+            <Link to={`/editpost/${post._id}`}>Edit Post</Link>
+            <button id={post._id} onClick={handleEvent}>Delete Post</button>
           </div>
         )
       })}
