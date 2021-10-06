@@ -1,8 +1,11 @@
 import api from './apiConfig'
+import axios from 'axios'
 
 export const getPosts = async () => {
   try {
+    console.log(api)
     const response = await api.get('/posts')
+    console.log(response)
     return response.data
   } catch (error) {
     throw error
