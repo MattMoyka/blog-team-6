@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { createPost } from "../../services/posts"
 import { Redirect } from "react-router"
+import './CreatePost.css'
 
 
 export default function CreatePost() {
@@ -30,6 +31,9 @@ export default function CreatePost() {
 }
 
   return (
+    <div className="create-div">
+<h1 className="h1-create"> Let's create a new post </h1>
+
     <form onSubmit={handleSubmit}>
       <input
         className="input-name"
@@ -51,10 +55,10 @@ export default function CreatePost() {
         placeholder='Image URL'
         value={post.imgURL}
         name='imgURL'
-        autoFocus
         onChange={handleChange}
       />
-   <button type='submit' className="submit-button">Submit</button>
-    </form>
+   <button type='submit' className="submit-button">Create</button>
+      </form>
+      </div>
   )
 }

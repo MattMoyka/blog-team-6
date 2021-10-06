@@ -1,62 +1,47 @@
+
 import api from './apiConfig'
-import axios from 'axios'
+
 
 export const getPosts = async () => {
   try {
-    console.log(api)
+
     const response = await api.get('/posts')
-    console.log(response)
-    return response.data
-  } catch (error) {
-    throw error
-  }
-}
 
-export const getPost = async id => {
-  try {
-    const response = await api.get(`/posts/${id}`)
     return response.data
-  } catch (error) {
-    throw error
-  }
-}
 
-export const createPost = async post => {
-  try {
-    const response = await api.post('/posts', post)
-    return response.data
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
+export const getPost = async (id) => {
+  try {
+    const response = await api.get(`/posts/${id}`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const createPost = async (post) => {
+  try {
+    const response = await api.post("/posts", post);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
 export const updatePost = async (id, post) => {
   try {
-    const response = await api.put(`/posts/${id}`, post)
-    return response.data
+    const response = await api.put(`/posts/${id}`, post);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
-export const deletePost = async id => {
+};
+export const deletePost = async (id) => {
   try {
-    const response = await api.delete(`/posts/${id}`)
-    return response.data
+    const response = await api.delete(`/posts/${id}`);
+    return response.data;
   } catch (error) {
-    throw error
+    throw error;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+};
