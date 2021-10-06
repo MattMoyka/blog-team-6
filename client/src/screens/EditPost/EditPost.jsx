@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams , Redirect} from 'react-router-dom'
 import { getPost, updatePost } from '../../services/posts'
+import './EditPost.css'
 
 export default function EditPost() {
 
@@ -39,6 +40,8 @@ export default function EditPost() {
   }
 
   return (
+    <div className="edit-div">
+      <h1 className="h1-edit">Let's make some changes!</h1>
     <form onSubmit={handleSubmit}>
     <input
       className="input-name"
@@ -64,6 +67,7 @@ export default function EditPost() {
       onChange={handleChange}
     />
  <button type='submit' className="edit-button">Edit</button>
-  </form>
+      </form>
+      </div>
   )
 }
