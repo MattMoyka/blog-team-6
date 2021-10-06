@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios from 'axios'
 
-let apiUrl;
+let apiUrl
 
 const apiUrls = {
   production: "https://blog-team-6.herokuapp.com/api/posts",
